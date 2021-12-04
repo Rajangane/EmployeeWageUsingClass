@@ -3,7 +3,7 @@
 Console.WriteLine("************* Employee Wage Using Class ***************");
 */
 using EmployeeWageUsingClass;
-Console.Write("Select Number:\n1)ComputeEmployeeWage\n2)EmpMulttipleCompany\n3)saveWage\n");
+Console.Write("Select Number:\n1)ComputeEmployeeWage\n2)EmpMulttipleCompany\n3)saveWage\n4)IinterfaceComputeEmpWage\n");
 int option = Convert.ToInt32(Console.ReadLine());
 switch (option)
 {
@@ -22,6 +22,13 @@ switch (option)
         Console.WriteLine(s.ToString());
         s1.ComputeWage();
         Console.WriteLine(s1.ToString());
+        break;
+    case 4:
+        EmpWageBuilder empWageBuilder = new EmpWageBuilder();
+        empWageBuilder.addCompanyEmpWage("Dmart", 20, 20, 10);
+        empWageBuilder.addCompanyEmpWage("Vishal", 10, 20, 50);
+        empWageBuilder.ComputeEmpWage();
+        Console.WriteLine("total wage for Dmart company : " + empWageBuilder.getTotalWage("Dmart"));
         break;
 
     default:
